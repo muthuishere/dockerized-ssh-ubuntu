@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  ubuntu1:
+    image: ubuntu-ssh
+    environment:
+      DOCKER_SSH_USER: user1
+      DOCKER_SSH_PASSWORD: password1
+    volumes:
+      - ./server1:/home/user1
+    ports:
+      - "5222:22"
+
+  ubuntu2:
+    image: ubuntu-ssh
+    environment:
+      DOCKER_SSH_USER: user2
+      DOCKER_SSH_PASSWORD: password2
+    volumes:
+      - ./server2:/home/user2
+    ports:
+      - "5223:22"
+
+
